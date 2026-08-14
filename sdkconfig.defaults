@@ -1,0 +1,11 @@
+# audio_test — ES24F stage 4 harness
+# Toolchain pineado: ESP-IDF v6.1-dev-6940-g08e0d30a74a (D11, PROJECT_NOTES)
+# Target: fijar con `idf.py set-target esp32s3`
+
+# Consola REPL por UART0 (USB-Serial del devkit), 115200 por defecto
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+
+# ISRs cache-safe (el timer de 32 kHz corre incluso con cache de flash off)
+# Nota: en IDF <= 5.x estos simbolos se llamaban *_ISR_IRAM_SAFE
+CONFIG_GPTIMER_ISR_CACHE_SAFE=y
+CONFIG_MCPWM_ISR_CACHE_SAFE=y
